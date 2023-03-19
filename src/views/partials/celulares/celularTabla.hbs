@@ -1,0 +1,47 @@
+{{#if celulares}}
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr class="text-center">
+            <th>id</th>
+            <th>Clave</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Fecha Lanzamiento</th>
+            <th>RAM</th>
+            <th>Almacenamiento</th>
+            <th>Cantidad camaras</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each celulares}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{clave}}</td>
+            <td>{{marca}}</td>
+            <td>{{precio}}</td>
+            <td>{{fechaLanzamiento}}</td>
+            <td>{{ram}}</td>
+            <td>{{almacenamiento}}</td>
+            <td>{{cantCamaras}}</td>
+            <td>
+                {{#if opcion}}
+                <a href="/celulares/{{_id}}/statusCelulares" class="btn btn-warning">No disponible</a>
+                {{else}}
+                <a href="/celulares/{{_id}}/statusCelulares" class="btn btn-success">Disponible</a>
+                {{/if}}
+                <a href="/celulares/{{_id}}/update" class="btn btn-info">Actualizar</a>
+                <a href="/celulares/{{_id}}/delete" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-centyer">
+    <div class="text-center text-white">
+        <h1>No Hay Celulares Registrados</h1>
+        <img src="/icons/Nofiles.png" class="w-50">
+    </div>
+</div>
+{{/if}}

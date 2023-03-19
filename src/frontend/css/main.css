@@ -1,0 +1,10 @@
+body{
+    background: #4f84b3;
+
+    min-height: 100vh;
+    background: url(/icons/black.png) no-repeat center center fixed;
+}
+
+.bg-black{
+    background: #da1b1b;
+}
